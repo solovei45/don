@@ -1,0 +1,17 @@
+  worksheet.write(len(wallets1) + 3, 0, 'Donate:')
+    worksheet.write(len(wallets1) + 3, 1, '0x2e69Da32b0F7e75549F920CD2aCB0532Cc2aF0E7')
+
+    row_format = workbook.add_format({'align': 'center'})
+    sizes = [9, 45, 8, 12, 12, 13, 12, 17, 17, 8, 20]
+    for col_num, size in enumerate(sizes):
+        worksheet.set_column(col_num, col_num, size, row_format)
+
+    first_row_format = workbook.add_format({
+        'text_wrap': True,
+        'valign': 'vcenter',
+        'align': 'center',
+        'border': 1
+    })
+    worksheet.set_row(0, 60, first_row_format)
+
+    workbook.close()
